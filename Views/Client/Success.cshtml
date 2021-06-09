@@ -1,0 +1,31 @@
+﻿@model IdentityServer4.Models.Client
+
+<div class="diagnostics-page">
+    <div class="lead">
+        <h1>Client</h1>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Client</h2>
+                </div>
+                <div class="card-body">
+                    <dl>
+                        @foreach (var prop in Model.Properties)
+                        {
+                            <dt>@prop.Key</dt>
+                            <dd>@prop.Value</dd>
+                         }
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

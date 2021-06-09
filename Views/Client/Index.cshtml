@@ -1,0 +1,56 @@
+﻿@using Wuther.IdentityServer.Controllers.Client
+@model ClientInputModel
+
+<div class="client-page">
+    <div class="lead">
+        <h1>Client Add</h1>
+        <p>Add a Client</p>
+    </div>
+
+    <partial name="_ValidationSummary" />
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Local Account</h2>
+                </div>
+
+                <div class="card-body">
+                    <form asp-action="Add">
+                        <div class="form-group">
+                            <label asp-for="ClientId"></label>
+                            <input class="form-control" placeholder="ClientId" name="ClientId" asp-for="ClientId" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ClientName"></label>
+                            <input class="form-control" placeholder="ClientName" asp-for="ClientName" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AllowedGrantTypes"></label>
+                            <select class="form-control" asp-for="AllowedGrantTypes">
+                                <option value="Implicit">Implicit</option>
+                                <option value="ImplicitAndClientCredentials">ImplicitAndClientCredentials</option>
+                                <option value="Code">Code</option>
+                                <option value="CodeAndClientCredentials">CodeAndClientCredentials</option>
+                                <option value="Hybrid">Hybrid</option>
+                                <option value="HybridAndClientCredentials">HybridAndClientCredentials</option>
+                                <option value="ClientCredentials">ClientCredentials</option>
+                                <option value="ResourceOwnerPassword">ResourceOwnerPassword</option>
+                                <option value="ResourceOwnerPasswordAndClientCredentials">ResourceOwnerPasswordAndClientCredentials</option>
+                                <option value="DeviceFlow">DeviceFlow</option>
+                            </select>
+                            @*<input  class="form-control" placeholder="AllowedGrantTypes" asp-for="AllowedGrantTypes" autocomplete="off">*@
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AllowedScopes"></label>
+                            <input class="form-control" placeholder="AllowedScopes" asp-for="AllowedScopes" autocomplete="off">
+                        </div>
+                        <button class="btn btn-primary" name="button" value="add">Add</button>
+                        <button class="btn btn-secondary" name="button" value="cancel">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
